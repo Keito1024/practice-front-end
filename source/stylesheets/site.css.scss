@@ -6,3 +6,55 @@
 body{
   margin:0px;
 }
+
+ul.tab{
+margin-bottom:0;
+}
+ul.content{
+margin-top:0;
+}
+li{
+list-style:none;
+}
+.tab{
+overflow:hidden;
+}
+.tab li{
+background:#ccc;
+padding:5px 25px;
+float:left;
+margin-right:1px;
+}
+.tab li.select{
+background:#eee;
+}
+.content li{
+background:#eee;
+padding:20px;
+}
+.hide {
+display:none;
+}
+
+
+
+#acMenu dt{
+  display:block;
+  width:200px;
+  height:50px;
+  line-height:50px;
+  text-align:center;
+  border:#666 1px solid;
+  cursor:pointer;
+  background-color:#ccc;
+  }
+  #acMenu dd{
+  background-color:#fff;
+  width:200px;
+  height:50px;
+  line-height:50px;
+  text-align:center;
+  border:#666 1px solid;
+  display:none;
+  margin:0;
+  }
