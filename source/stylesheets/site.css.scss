@@ -1,6 +1,7 @@
 @charset "utf-8";
 @import "./layouts/all";
 @import "./modules/all";
+@import "compass";
 
 body{
   margin:0px;
@@ -9,11 +10,7 @@ body{
 ul.tab{
   margin-bottom:0;
   overflow:hidden;
-  &:after{
-    content:"";
-    clear: both;
-    display: block;
-  }
+  @include clearfix();
   li{
     background:#ccc;
     padding:5px 25px;
