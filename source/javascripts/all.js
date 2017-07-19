@@ -17,20 +17,16 @@
 
 
 // ---------json--------------
+
 $(function(){
+  var template = _.template('<div><table><tr><th><%= id %></th>'+'<th><%= jp_name %></th>'+'<th><%= name %></th>'+'<th><%= description.ja %></th></tr></table></div>');
   $.ajax({
-    method:"GET"
-    url :"members.json"
+    method:"GET",
+    url:"/files/members.json",
     dataType:"json"
   }).done(function(data){
-    for(var i=0;i<data.length;i++){
-      var tags = "";
-      for(var dt in deta[i]){
-        tags = tags+"<td>"+ data.name[i][dt]+"</td>";
-        tags = tags+"<td>"+ data.jp_name[i][dt]+"</td>";
-        tags = tags+"<td>"+ data.id[i][dt]+"</td>";
-      }
-      $("#tbl").append("<tr>" + tags + "</tr>");
-    }
+    _.each(Object.keys(data), function(key){
+      $('.ly-global-footer').append(template(data[key]));
+    });
   });
 });
