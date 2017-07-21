@@ -30,3 +30,17 @@ $(function(){
     });
   });
 });
+
+
+$(function(){
+  var tenplate = _.template();
+  $.ajax({
+    method:"GET",
+    url:"/files/members.json",
+    dataType:"json"
+  }).done(function(data){
+    _.each(Object.key(data),function(key){
+      $('.ly-global-footer').append(template(data[key]));
+    });
+  });
+});
